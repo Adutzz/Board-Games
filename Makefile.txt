@@ -1,0 +1,19 @@
+# compiler setup
+CC=gcc
+CFLAGS=-Wall -Wextra -std=c99 -lm
+
+# define targets
+TARGETS=jocuri_societate
+
+build: $(TARGETS)
+
+jocuri_societate: Problema1.c
+	$(CC) $(CFLAGS) Problema1.c -o jocuri_societate
+
+pack:
+	zip -FSr 315CA_RotaruFlorisAdrian_Tema1.zip README Makefile *.c
+
+clean:
+	rm -f $(TARGETS)
+
+.PHONY: pack clean
